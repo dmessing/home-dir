@@ -1,0 +1,55 @@
+add_newline = true
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[x➜](bold red)"    
+
+# Disable the package module, hiding it from the prompt completely
+#[package]
+#disabled = true
+
+[directory]
+truncation_length = 100
+truncate_to_repo = false
+style = "green"
+format = "[:$path]($style)[$read_only]($read_only_style) "
+
+[aws]
+format = 'on [$symbol($profile )(\($region\) )(\[$duration\])]($style)'
+
+[cmd_duration]
+style="cyan"
+min_time=5000
+format = "time: [$duration]($style) "
+
+[git_branch]
+symbol = ""
+style = "green"
+format = '[\($symbol$branch\)]($style) '
+
+[git_status]
+style =	"green"
+ahead = "⇡"
+behind = "⇣"
+conflicted = "≠"
+deleted = "✖"
+diverged = "⇕"
+modified = "Δ"
+renamed = "»"
+staged = "+"
+stashed = "$"
+untracked = "?"
+
+
+[hostname]
+style = "yellow"
+ssh_only = true
+
+[username]
+style_user = "white"
+style_root = "red"
+show_always = false
+disabled = false
+
+
