@@ -52,4 +52,7 @@ style_root = "red"
 show_always = false
 disabled = false
 
-
+[dotnet]
+symbol = "🥅 "
+style = "green"
+heuristic = false
