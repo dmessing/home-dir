@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # share history across multiple zsh sessions
 setopt SHARE_HISTORY
 # append to history
@@ -47,17 +45,14 @@ alias gitst="git status" #long status
 alias gitus="git unstage" #unstage a change alias was set with 'git config --global alias.unstage "reset HEAD"'
 alias gitfa="git fetch --all"
 alias gitam="git commit -am" 
-# ls/exa
+
+# ls/eza
 alias ls="eza -a --color=always"
 alias ls1="eza -1a --color=always"
 alias lsa="eza -al --color=always"
 alias lsr="eza -al --git -s modified --color=always"
 
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-alias python=/usr/local/bin/python3
-alias pip=/usr/local/bin/pip3
 
 # aws
 export AWS_PROFILE=mess-root
@@ -67,17 +62,3 @@ export GOOGLE_APPLICATION_CREDENTIALS=/Users/davidmessinger/dev/GoogleCloudKeys/
 
 eval "$(starship init zsh)"
 
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/davidmessinger/dev/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/davidmessinger/dev/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/davidmessinger/dev/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/davidmessinger/dev/google-cloud-sdk/completion.zsh.inc'; fi
-
-if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
-  export PATH=/opt/homebrew/opt/ruby/bin:$PATH
-  export PATH=`gem environment gemdir`/bin:$PATH
-fi
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
