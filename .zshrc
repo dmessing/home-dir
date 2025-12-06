@@ -48,10 +48,10 @@ alias gitus="git unstage" #unstage a change alias was set with 'git config --glo
 alias gitfa="git fetch --all"
 alias gitam="git commit -am" 
 # ls/exa
-alias ls="exa -aF --color=always"
-alias ls1="exa -1aF --color=always"
-alias lsa="exa -aFl --color=always"
-alias lsr="exa -aFl --git -s modified --color=always"
+alias ls="eza -a --color=always"
+alias ls1="eza -1a --color=always"
+alias lsa="eza -al --color=always"
+alias lsr="eza -al --git -s modified --color=always"
 
 
 export NVM_DIR="$HOME/.nvm"
