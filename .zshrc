@@ -1,3 +1,9 @@
+
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+
+alias sourcevenv='source .venv/bin/activate'
+
 # share history across multiple zsh sessions
 setopt SHARE_HISTORY
 # append to history
@@ -57,8 +63,30 @@ alias lsr="eza -al --git -s modified --color=always"
 # aws
 export AWS_PROFILE=mess-root
 
-# google cloud
-export GOOGLE_APPLICATION_CREDENTIALS=/Users/davidmessinger/dev/GoogleCloudKeys/githubarchive-326814-ab68dc4e885d.json
 
 eval "$(starship init zsh)"
 
+
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+
+
+# Added by Antigravity
+export PATH="/Users/davidmessinger/.antigravity/antigravity/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/davidmessinger/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
