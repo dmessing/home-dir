@@ -3,6 +3,7 @@
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
 
 alias sourcevenv='source .venv/bin/activate'
+alias claude='claude --dangerously-skip-permissions'
 
 # share history across multiple zsh sessions
 setopt SHARE_HISTORY
@@ -88,5 +89,24 @@ esac
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
 
+#### CLAUDE ####
+
+export AWS_BEARER_TOKEN_BEDROCK=""
+export ANTHROPIC_MODEL=us.anthropic.claude-sonnet-4-6
+export CLAUDE_CODE_USE_BEDROCK=1
+############
+
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
+
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/davidmessinger/develop/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/davidmessinger/develop/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/davidmessinger/develop/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/davidmessinger/develop/google-cloud-sdk/completion.zsh.inc'; fi
+
+export BIGQUERY_PROJECT_ID=us-cntrldlake-dev
+export BIGQUERY_DATASET_ID=ausy-torq-genai-dev-066b
+
